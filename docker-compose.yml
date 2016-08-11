@@ -1,0 +1,13 @@
+etcd-server:
+  image: superxi/etcd
+  volumes:
+    - /Users/Superxi/Documents/etcd/data:/data
+  ports:
+    - "2379:2379"
+    - "2380:2380"
+    - "4001:4001"
+    - "7001:7001"
+  environment:
+    - name=etcd-server
+    - advertise-client-urls=http://192.168.99.100:4001
+    - initial-advertise-peer-urls=http://192.168.99.100:7001
